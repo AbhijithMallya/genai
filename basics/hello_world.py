@@ -19,13 +19,14 @@ response = client.chat.completions.create(
 
 while (query := input("User (press 'q' to exit): ")) != 'q':
         user_message: ChatCompletionMessageParam = {"role":"user","content":query}
+        messages.append({"role":"user","content":user_message})
         response = client.chat.completions.create(
             messages=messages,
             model="liquid/lfm2-24b-a2b",
             temperature=0.7,
             max_tokens=200
         )
-        messages.append({"role":"assistant","conten":response.choices[0].message.content})
+        messages.append({"role":"assistant","content":response.choices[0].message.content})
         print("LLM Response : ",response.choices[0].message.content)
-        print("\n******\n")
+        print("\n******")
         print("LLM Usage : ",response.usage.model_dump_json(indent=2),"\n")
