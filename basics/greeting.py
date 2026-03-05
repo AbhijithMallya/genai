@@ -1,11 +1,8 @@
-from openai import OpenAI
 from typing import List
 from openai.types.chat import ChatCompletionMessageParam
 from datetime import datetime
-import os
 
-client = OpenAI(api_key="1234",
-                base_url="http://127.0.0.1:8000/v1")
+from config.llm import client
 
 present= datetime.now()
 username = input("Please Enter Your Name :")

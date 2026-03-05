@@ -1,10 +1,7 @@
-from openai import OpenAI
 from typing import List
 from openai.types.chat import ChatCompletionMessageParam
 
-client = OpenAI(api_key="1234",
-                base_url="http://127.0.0.1:8000/v1")
-
+from config.llm import client
 
 messages: List[ChatCompletionMessageParam] = [
 {"role":"system","content":"You are a helpful assistant"}
