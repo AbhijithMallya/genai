@@ -1,8 +1,5 @@
 # Tool calling sample
-import json
 from function_schema import get_function_schema
-
-
 
 # DATA ====
 weather = {
@@ -11,13 +8,11 @@ weather = {
     "bombay":"15",
 }
 
-
 school_count = {
     "udupi" : 5,
     "trivandrum" : 7,
     "bombay" : 3
 }
-
 
 food = {
     "udupi" : "idli",
@@ -26,8 +21,7 @@ food = {
 }
 # DATA ====
 
-#Functions ====
-
+#FUNCTIONS ====
 def get_weather(place : str):
     """
     This a function to get the weather of a 'place'. Please use lowercase only
@@ -61,6 +55,7 @@ def get_popular_food(place: str):
         return popular
     except Exception as e :
         return "The given place is not available"
+#FUNCTIONS=====
 
 
 tool_calls = [get_function_schema(get_weather),
