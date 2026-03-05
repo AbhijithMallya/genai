@@ -55,7 +55,7 @@ def get_popular_food(place: str):
         return popular
     except Exception as e :
         return "The given place is not available"
-#FUNCTIONS=====
+#FUNCTIONS ====
 
 
 tool_calls = [get_function_schema(get_weather),
@@ -68,5 +68,6 @@ function_mapping = {"get_weather":get_weather,
                     "get_school_count":get_school_count,
                     "get_popular_food":get_popular_food}
 
-
-print(function_mapping["get_popular_food"]("udupi"))
+                        #Tool Name      #Tool Arguments
+print(function_mapping["get_popular_food"]("udupi")) # -->  Result 
+print(get_popular_food("udupi"))
