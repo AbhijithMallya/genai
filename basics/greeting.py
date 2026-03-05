@@ -43,7 +43,7 @@ except Exception as e:
 
 print(f"\n {greeting}\n")
 
-# User - Assistant Loop (your original working code)
+# User - Assistant Loop
 while (query := input("User (press 'q' to exit): ")) != 'q':
     user_message: ChatCompletionMessageParam = {"role": "user", "content": query}
     messages.append(user_message)
