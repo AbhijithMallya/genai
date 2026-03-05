@@ -11,6 +11,7 @@ while (query := input("User (press 'q' to exit): ")) != 'q':
         messages.append(user_message)
         response = client.chat.completions.create(
             messages=messages,
+            # tools=
             model="liquid/lfm2-24b-a2b",
             temperature=0.7,
             max_tokens=200
